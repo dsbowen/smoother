@@ -1,0 +1,14 @@
+site_name: Smoother
+docs_dir: docs_md
+site_dir: docs
+repo_url: https://github.com/dsbowen/smoother
+edit_uri: edit/master/docs_md
+nav:
+  - Home: index.md
+  - Examples: examples.md
+  - Smoother: smoother.md
+  - Objectives and constraints: utils.md
+  - Contribute: contribute.md
+theme: readthedocs
+extra_css:
+  - css/extra.css

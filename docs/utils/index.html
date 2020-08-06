@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Objectives and constraints - Smoother</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Objectives and constraints";
+    var mkdocs_page_input_path = "utils.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Smoother</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../smoother/">Smoother</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Objectives and constraints</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#smootherderivativeobjective">smoother.DerivativeObjective</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#smoothermassconstraint">smoother.MassConstraint</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#methods_1">Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#smoothermomentconstraint">smoother.MomentConstraint</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#methods_2">Methods</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contribute/">Contribute</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Smoother</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Objectives and constraints</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/dsbowen/smoother/edit/master/docs_md/utils.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p><link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" /></p>
+<style>
+    a.src-href {
+        float: right;
+    }
+    p.attr {
+        margin-top: 0.5em;
+        margin-left: 1em;
+    }
+    p.func-header {
+        background-color: gainsboro;
+        border-radius: 0.1em;
+        padding: 0.5em;
+        padding-left: 1em;
+    }
+    table.field-table {
+        border-radius: 0.1em
+    }
+</style>
+
+<h1 id="objective-functions-and-constraints">Objective functions and constraints</h1>
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+
+    </tbody>
+</table>
+
+<h2 id="smootherderivativeobjective">smoother.<strong>DerivativeObjective</strong></h2>
+<p class="func-header">
+    <i>class</i> smoother.<b>DerivativeObjective</b>(<i>d=1, weight=None</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L6">[source]</a>
+</p>
+
+<p>A <code>Smoother</code> objective function which minimizes the sum of a square
+derivative.</p>
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters and attributes:</b></td>
+    <td class="field-body" width="100%"><b>d : <i>int, default=1</i></b>
+<p class="attr">
+    e.g. <code>1</code> means first derivative, <code>2</code> means second derivative.
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+<h4 id="methods">Methods</h4>
+<p class="func-header">
+    <i></i> <b>__call__</b>(<i>self, smoother</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L20">[source]</a>
+</p>
+
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters:</b></td>
+    <td class="field-body" width="100%"><b>smoother : <i><code>Smoother</code></i></b>
+<p class="attr">
+    The smoother to which this objective function applies.
+</p></td>
+</tr>
+<tr class="field">
+    <th class="field-name"><b>Returns:</b></td>
+    <td class="field-body" width="100%"><b>value : <i>float</i></b>
+<p class="attr">
+    Approximate mean square derivative over all points of the distribution.
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+<h2 id="smoothermassconstraint">smoother.<strong>MassConstraint</strong></h2>
+<p class="func-header">
+    <i>class</i> smoother.<b>MassConstraint</b>(<i>lb, ub, mass, weight=None</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L39">[source]</a>
+</p>
+
+<p>A <code>Smoother</code> constraint that forces a certain amount of probability mass
+to be within a given range.</p>
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters and attributes:</b></td>
+    <td class="field-body" width="100%"><b>lb : <i>float</i></b>
+<p class="attr">
+    Lower bound of the range within which the probability mass must be.
+</p>
+<b>ub : <i>float</i></b>
+<p class="attr">
+    Upper bound of the range within which the probability mass must be.
+</p>
+<b>mass : <i>float between 0. and 1.</i></b>
+<p class="attr">
+    Amount of probability mass between <code>lb</code> and <code>ub</code>.
+</p>
+<b>weight : <i>float or None, default=None</i></b>
+<p class="attr">
+    Weight to place on the constraint. If <code>None</code> the weight will be set automatically when the constraint is called based on the smoother.
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+<h4 id="methods_1">Methods</h4>
+<p class="func-header">
+    <i></i> <b>__call__</b>(<i>self, smoother</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L64">[source]</a>
+</p>
+
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters:</b></td>
+    <td class="field-body" width="100%"><b>smoother : <i>Smoother</i></b>
+<p class="attr">
+    Smoother to which this constraint applies.
+</p></td>
+</tr>
+<tr class="field">
+    <th class="field-name"><b>Returns:</b></td>
+    <td class="field-body" width="100%"><b>loss : <i>float</i></b>
+<p class="attr">
+
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+<h2 id="smoothermomentconstraint">smoother.<strong>MomentConstraint</strong></h2>
+<p class="func-header">
+    <i>class</i> smoother.<b>MomentConstraint</b>(<i>value, degree, type_='raw', norm=False, weight=None</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L80">[source]</a>
+</p>
+
+<p>A <code>Smoother</code> constraint that forces a moment condition to hold.</p>
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters and attributes:</b></td>
+    <td class="field-body" width="100%"><b>value : <i>float</i></b>
+<p class="attr">
+    The target value of the moment.
+</p>
+<b>degree : <i>int</i></b>
+<p class="attr">
+    The degree of the moment; e.g. the 1st moment is the mean.
+</p>
+<b>type_ : <i>str, default='raw'</i></b>
+<p class="attr">
+    Type of moment: <code>'raw'</code>, <code>'central'</code> or <code>'standardized'</code>.
+</p>
+<b>norm : <i>bool, default=False</i></b>
+<p class="attr">
+    Indicates whether to apply a norm to the moment.
+</p>
+<b>weight : <i>float or None, default=None</i></b>
+<p class="attr">
+    Weight to place on the constraint. If <code>None</code> the weight will be set automatically when the constraint is called based on the smoother.
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+<h4 id="methods_2">Methods</h4>
+<p class="func-header">
+    <i></i> <b>__call__</b>(<i>self, smoother</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/utils.py#L109">[source]</a>
+</p>
+
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters:</b></td>
+    <td class="field-body" width="100%"><b>smoother : <i>Smoother</i></b>
+<p class="attr">
+    Smoother to which this constraint applies.
+</p></td>
+</tr>
+<tr class="field">
+    <th class="field-name"><b>Returns:</b></td>
+    <td class="field-body" width="100%"><b>loss : <i>float</i></b>
+<p class="attr">
+
+</p></td>
+</tr>
+    </tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contribute/" class="btn btn-neutral float-right" title="Contribute">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../smoother/" class="btn btn-neutral" title="Smoother"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/dsbowen/smoother/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../smoother/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../contribute/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
