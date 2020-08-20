@@ -36,7 +36,19 @@ class Smoother():
     
     @property
     def F_x(self):
-        f_x = self._f_x + np.insert(self._f_x[:-1], -1, 1)
+        """
+        Explanation of expression:
+        
+        F_x[1] = integral_0^d f_x[0] + (f_x[1]-f_x[0])/d * x dx
+        = [f_x[0]*x + (f_x[1]-f_x[0])/d * x^2]_0^d
+        = 1/2 * (f_x[0] + f_x[1]) * d
+        This is f_x[:-1] + f_x[1:]
+        We normalize in the end, so we can leave off 1/2 and d.
+
+        F_x[0] = 0
+        This is np.insert(f_x, 0, 0)
+        """
+        f_x = np.insert(self._f_x[:-1] + self._f_x[1:], 0, 0)
         a = np.cumsum(f_x)
         a /= a[-1]
         return a
@@ -113,9 +125,6 @@ class Smoother():
         if self.x[-1] <= x:
             return 1
         lb, w_lb, ub, w_ub = self._get_weights(x)
-        # self.F_x is off by a small margin due to numerical approximation
-        # this is a hacky fix which helps performance
-        lb = max(0, lb-1)
         return w_lb * self.F_x[lb] + w_ub * self.F_x[ub]
         
     def _get_weights(self, x):
