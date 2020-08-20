@@ -36,7 +36,12 @@ class Smoother():
     
     @property
     def F_x(self):
-        return 1 / self._f_x.shape[0] * np.cumsum(self._f_x)
+        a = np.cumsum(self._f_x)
+        a /= a[-1]
+        return a
+        # a = np.cumsum(self._f_x[1:])
+        # a /= a[-1]
+        # return np.insert(a, 0, 0)
     
     def mean(self):
         """
@@ -110,6 +115,9 @@ class Smoother():
         if self.x[-1] <= x:
             return 1
         lb, w_lb, ub, w_ub = self._get_weights(x)
+        # self.F_x is off by a small margin due to numerical approximation
+        # this is a hacky fix which helps performance
+        lb = max(0, lb-1)
         return w_lb * self.F_x[lb] + w_ub * self.F_x[ub]
         
     def _get_weights(self, x):
@@ -145,9 +153,9 @@ class Smoother():
         ppf(q) : float
             Percent point function; inverse of `self.cdf`.
         """
-        def get_ppf(x, i, max_iter=10):
+        def get_ppf(x, i, max_iter=1e2):
             delta = self.cdf(x) - q
-            if abs(delta) < .001 or i > max_iter:
+            if abs(delta) < 1e-4 or i > max_iter:
                 return x
             step_size = (self.x[-1] - self.x[0]) / 2**(i+1)
             x += step_size if delta < 0 else -step_size
