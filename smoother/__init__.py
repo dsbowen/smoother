@@ -36,12 +36,10 @@ class Smoother():
     
     @property
     def F_x(self):
-        a = np.cumsum(self._f_x)
+        f_x = self._f_x + np.insert(self._f_x[:-1], -1, 1)
+        a = np.cumsum(f_x)
         a /= a[-1]
         return a
-        # a = np.cumsum(self._f_x[1:])
-        # a /= a[-1]
-        # return np.insert(a, 0, 0)
     
     def mean(self):
         """
