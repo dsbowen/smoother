@@ -73,7 +73,9 @@ class MassConstraint():
         loss : float
         """
         weight = 5e2 if self.weight is None else self.weight
-        curr_mass = smoother.cdf(self.ub) - smoother.cdf(self.lb)
+        lb = (self.lb - smoother._loc) / smoother._scale
+        ub = (self.ub - smoother._loc) / smoother._scale
+        curr_mass = smoother.cdf(ub) - smoother.cdf(lb)
         return weight * (curr_mass - self.mass)**2
 
 
@@ -117,9 +119,11 @@ class MomentConstraint():
         -------
         loss : float
         """
-        weight = (
-            5e2 / (smoother.x[-1] - smoother.x[0])**2 if self.weight is None
-            else self.weight
-        )
+        weight = 5e2 if self.weight is None else self.weight
         moment = smoother.moment(self.degree, self.type_, self.norm)
-        return weight * (moment - self.value)**2
+        # THIS ONLY WORKS FOR FIRST CENTRAL MOMENT
+        # OTHER FUNCTIONS WILL BE REQUIRED FOR OTHER MOMENTS
+        # NOT SCALE INVARIANT IN GENERAL
+        value = (self.value - smoother._loc) / smoother._scale
+        print('value', value)
+        return weight * (moment - value)**2

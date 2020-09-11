@@ -252,8 +252,9 @@ class Smoother():
         -------
         self
         """
-        self.x = np.linspace(lb, ub, num=num)
-        self._f_x = np.ones(num) / (ub-lb)
+        self._loc, self._scale = lb, ub - lb
+        self.x = np.linspace(0, 1, num=num)
+        self._f_x = np.ones(num)
         self._constraints = constraints
         self._objective = objective
         bounds = Bounds([0]*num, [np.inf]*num)
@@ -265,7 +266,9 @@ class Smoother():
             bounds=bounds,
             options={'disp': False}
         )
-        del self._constraints, self._objective
+        self.x = self._scale * self.x + self._loc
+        self._f_x /= self._scale
+        del self._constraints, self._objective, self._loc, self._scale
         return self
 
     def _loss(self, f_x=None):
