@@ -1,6 +1,8 @@
 README.md
 setup.py
 smoother/__init__.py
+smoother/max_entropy.py
+smoother/smoother.py
 smoother/utils.py
 smoother.egg-info/PKG-INFO
 smoother.egg-info/SOURCES.txt

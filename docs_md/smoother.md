@@ -34,7 +34,7 @@
 ##smoother.**Smoother**
 
 <p class="func-header">
-    <i>class</i> smoother.<b>Smoother</b>(<i>lb=0, ub=1, num=50</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L12">[source]</a>
+    <i>class</i> smoother.<b>Smoother</b>(<i>lb=0, ub=1, num=50</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L10">[source]</a>
 </p>
 
 The smoother computes a distribution by maximizing an objective function
@@ -69,7 +69,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>mean</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L41">[source]</a>
+    <i></i> <b>mean</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L54">[source]</a>
 </p>
 
 
@@ -93,7 +93,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>var</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L49">[source]</a>
+    <i></i> <b>var</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L62">[source]</a>
 </p>
 
 
@@ -117,7 +117,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>std</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L57">[source]</a>
+    <i></i> <b>std</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L70">[source]</a>
 </p>
 
 
@@ -141,7 +141,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>median</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L65">[source]</a>
+    <i></i> <b>median</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L78">[source]</a>
 </p>
 
 
@@ -165,7 +165,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>entropy</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L73">[source]</a>
+    <i></i> <b>entropy</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L86">[source]</a>
 </p>
 
 
@@ -189,7 +189,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>pdf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L81">[source]</a>
+    <i></i> <b>pdf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L94">[source]</a>
 </p>
 
 
@@ -220,7 +220,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>cdf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L97">[source]</a>
+    <i></i> <b>cdf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L110">[source]</a>
 </p>
 
 
@@ -251,7 +251,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>ppf</b>(<i>self, q</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L136">[source]</a>
+    <i></i> <b>ppf</b>(<i>self, q</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L149">[source]</a>
 </p>
 
 
@@ -282,7 +282,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>sf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L158">[source]</a>
+    <i></i> <b>sf</b>(<i>self, x</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L171">[source]</a>
 </p>
 
 
@@ -313,7 +313,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>isf</b>(<i>self, q</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L171">[source]</a>
+    <i></i> <b>isf</b>(<i>self, q</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L184">[source]</a>
 </p>
 
 
@@ -344,7 +344,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>moment</b>(<i>self, degree=1, type_='raw', norm=False</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L184">[source]</a>
+    <i></i> <b>moment</b>(<i>self, degree=1, type_='raw', norm=False</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L197">[source]</a>
 </p>
 
 
@@ -375,7 +375,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>fit</b>(<i>self, lb, ub, constraints, objective=lambda self: self.entropy(), num=50</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L210">[source]</a>
+    <i></i> <b>fit</b>(<i>self, lb, ub, constraints, objective=lambda self: self.entropy(), num=50</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L222">[source]</a>
 </p>
 
 
@@ -386,11 +386,11 @@ The smoother computes a distribution by maximizing an objective function
     <tbody valign="top">
         <tr class="field">
     <th class="field-name"><b>Parameters:</b></td>
-    <td class="field-body" width="100%"><b>lb : <i>float</i></b>
+    <td class="field-body" width="100%"><b>lb : <i>scalar</i></b>
 <p class="attr">
     Lower bound of the distribution.
 </p>
-<b>ub : <i>float</i></b>
+<b>ub : <i>scalar</i></b>
 <p class="attr">
     Upper bound of the distribution.
 </p>
@@ -422,7 +422,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>dump</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L273">[source]</a>
+    <i></i> <b>dump</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L285">[source]</a>
 </p>
 
 
@@ -446,7 +446,7 @@ The smoother computes a distribution by maximizing an objective function
 
 
 <p class="func-header">
-    <i></i> <b>load</b>(<i>state_dict</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/__init__.py#L285">[source]</a>
+    <i></i> <b>load</b>(<i>state_dict</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/smoother/blob/master/smoother/smoother.py#L297">[source]</a>
 </p>
 
 
