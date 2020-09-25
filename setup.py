@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="smoother",
-    version="0.0.3",
+    version="0.0.5",
     author="Dillon Bowen",
     author_email="dsbowen@wharton.upenn.edu",
-    description="Computes non-parametric distributions by optizing a constrained smoothing function",
+    description="Computes non-parametric distributions by optimizing a constrained smoothing function",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dsbowen/smoother",

@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: smoother
-Version: 0.0.2
-Summary: Computes non-parametric distributions by optizing a constrained smoothing function
+Version: 0.0.5
+Summary: Computes non-parametric distributions by optimizing a constrained smoothing function
 Home-page: https://github.com/dsbowen/smoother
 Author: Dillon Bowen
 Author-email: dsbowen@wharton.upenn.edu
